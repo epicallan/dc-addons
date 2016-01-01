@@ -1,1 +1,1 @@
-module.exports = require('./dist/server/dc-server');
+module.exports = require('./dist/server/dc-addons.min');
