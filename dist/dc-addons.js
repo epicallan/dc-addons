@@ -10,7 +10,7 @@
   * 2015-12-17 15:06:51
   *
   */
- function _dc_addons(dc){
+ function _dc_addons(dc,L){
    if (!dc.utils.getAllFilters) {
        dc.utils.getAllFilters = function () {
            var result = {};
@@ -2945,11 +2945,11 @@
    })();
   return dc;
  }
- if(typeof define === "function" && define.amd) {
-     define(["dc"],_dc_addons);
- } else if(typeof module === "object" && module.exports) {
+ if(typeof module === "object" && module.exports) {
      var _dc = require('dc');
-     module.exports = _dc_addons(_dc);
+     var L = require('leaflet');
+     require('leaflet.markercluster');
+     module.exports = _dc_addons(_dc,L);
  } else {
-     this.dc = _dc_addons(dc);
+     this.dc = _dc_addons(dc,L);
  }
